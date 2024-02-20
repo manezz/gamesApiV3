@@ -18,4 +18,16 @@ public class GameService {
         gameRepository.findAll().forEach(game -> games.add(game));
         return games;
     }
+
+    public Game getGameById(int id) {
+        return gameRepository.findById(id).get();
+    }
+
+    public void createGame(Game game) {
+        gameRepository.save(game);
+    }
+
+    public void deleteGame(int id) {
+        gameRepository.deleteById(id);
+    }
 }
